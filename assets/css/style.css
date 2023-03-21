@@ -60,7 +60,7 @@ a {
     z-index: 1;
 }
 
-.header {
+.hero {
     height: calc(100vh - 90px);
     background-color: #e6f0ff;
     position: relative;
