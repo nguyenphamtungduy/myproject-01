@@ -1,0 +1,261 @@
+/* PC */
+@media screen and (min-width: 992px) {
+    .hide-on-pc {
+        display: none;
+    }
+    .show-on-mobile {
+        display: none;
+    }
+}
+/* Tablet and mobile */
+@media screen and (max-width: 991px) {
+    html {
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+    .navbar .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s ease;
+    }
+
+    .menu {
+        position: fixed;
+        inset: 0 40% 0 0;
+        background-color: #fff;
+        z-index: 2;
+        transform: translateX(-100%);
+        /* display: none; */
+        padding: 60px;
+        transition: 0.5s ease;
+    }
+
+    .nav__menu {
+        font-size: 2rem;
+        color: #002366;
+    }
+
+    .menu ul {
+        margin-top: 30px;
+    }
+
+    .menu ul a {
+        display: block;
+        font-size: 2rem;
+        line-height: 1.5;
+        color: #4f5361;
+        padding: 10px 0;
+    }
+
+    .separate {
+        border-top: 1.5px solid #002366;
+    }
+
+    .hero .info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero .title {
+        font-size: 9.4rem;
+    }
+
+    .hero-img {
+        display: none;
+    }
+
+    .clients .images {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .guides-item {
+        margin: 50px;
+    }
+
+    .feature .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats .row {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-areas:
+            "info info info....."
+            "...img img img";
+    }
+    .stats .img-block {
+        width: 100%;
+        grid-area: img;
+    }
+
+    .stats .img-block .image {
+        width: 100%;
+    }
+
+    .stats .img-block .trend-stats {
+        width: 62%;
+    }
+
+    .stats .info {
+        padding: 20px;
+        grid-area: info;
+        width: 100%;
+    }
+    .stats .info .sub-title {
+        width: 70%;
+    }
+
+    .stats .info .desc {
+        width: 70%;
+    }
+
+    .stats .row-qty {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .stats .row .qty-item {
+        font-size: 6rem;
+    }
+
+    .subscription img {
+        display: none;
+    }
+
+    .footer .row-top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer .social {
+        gap: 30px;
+    }
+
+    .footer .social-link {
+        transform: scale(2);
+    }
+
+    .footer .row-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .hide-on-tablet {
+        display: none;
+    }
+    .show-on-mobile {
+        display: none;
+    }
+}
+/* Mobile */
+@media screen and (max-width: 767px) {
+    .show-on-mobile {
+        display: block;
+    }
+
+    .hide-on-mobile {
+        display: none;
+    }
+    .menu {
+        inset: 0 20% 0 0;
+    }
+
+    .hero {
+        height: calc(100vh - 70px);
+    }
+
+    .hero .title {
+        font-size: 3rem;
+    }
+
+    .clients .desc:last-child {
+        display: none;
+    }
+
+    .list-guides {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .guides-item {
+        margin: 20px;
+    }
+
+    .feature {
+        padding: 50px 0;
+    }
+
+    .feature .link {
+        display: none;
+    }
+
+    .feature .list {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-btn {
+        margin: 40px auto 0;
+    }
+
+    .stats .row {
+        grid-template-areas: "info" "img";
+    }
+
+    .stats .info .sub-title {
+        width: 100%;
+        font-size: 4rem;
+    }
+
+    .stats .info .desc {
+        width: 100%;
+    }
+
+    .stats .row .qty-item {
+        font-size: 3.2rem;
+    }
+
+    .stats .qty-decs {
+        margin-top: 10px;
+        font-size: 1.2rem;
+    }
+
+    .stats .row-qty {
+        padding: 0 10px;
+    }
+
+    .qty {
+        text-align: center;
+    }
+
+    .subscription .body {
+        padding: 0 20px;
+    }
+
+    .subscription .info {
+        margin: auto;
+    }
+
+    .footer .social-link {
+        transform: scale(1.5);
+    }
+}

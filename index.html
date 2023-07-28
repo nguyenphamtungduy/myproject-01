@@ -92,14 +92,28 @@
 
         <!-- <link rel="stylesheet" href="./assets/fonts/stylesheet.css" /> -->
         <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
     </head>
     <body>
         <!-- Header -->
         <div class="fixed-header">
             <div class="content">
                 <nav class="navbar">
+                    <div class="nav__menu hide-on-pc">
+                        <svg
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 448 512"
+                        >
+                            <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+                            />
+                        </svg>
+                    </div>
                     <!-- Logo -->
-                    <a href="#">
+                    <a class="logo" href="#">
                         <img src="./assets/imgs/Logo.svg" alt="Besnik." />
                     </a>
                     <!-- Navigation -->
@@ -111,14 +125,64 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                     <!-- Action -->
-                    <div class="actions">
+                    <div class="actions hide-on-mobile">
                         <a href="#!" class="actions-link">Sign in</a>
                         <a href="#!" class="btn actions-btn">Register</a>
                     </div>
                 </nav>
             </div>
         </div>
+        <!-- menu-overlay -->
+        <div class="menu-overlay hide-on-pc">
+            <div class="overlay"></div>
+            <div class="menu">
+                <a href="#">
+                    <img
+                        class="child"
+                        src="./assets/imgs/Logo.svg"
+                        alt="Besnik."
+                    />
+                </a>
+                <ul>
+                    <li class="child"><a href="#">Home</a></li>
+                    <li class="child"><a href="#services">Services</a></li>
+                    <li class="child"><a href="#features">Features</a></li>
+                    <li class="child"><a href="#recourses">Recourses</a></li>
+                    <li class="child"><a href="#contact">Contact</a></li>
+                    <li class="separate hide-on-tablet">
+                        <a href="#!">Sign in</a>
+                    </li>
+                    <li class="hide-on-tablet"><a href="#!">Register</a></li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            const child = document.querySelectorAll(".child");
+            var arr = Array.prototype.slice.call(child);
+            console.log(arr);
+            const menuItem = document.querySelector(".nav__menu");
+            const menuList = document.querySelector(".menu");
+            const menuClose = document.querySelector(".overlay");
+            menuItem.onclick = function () {
+                menuList.style.transform = "translateX(0)";
+                menuClose.style.visibility = "visible";
+                menuClose.style.opacity = "1";
+            };
 
+            arr.forEach((element) => {
+                element.onclick = function () {
+                    menuList.style.transform = "translateX(-100%)";
+                    menuClose.style.visibility = "hidden";
+                    menuClose.style.opacity = "0";
+                };
+            });
+
+            menuClose.onclick = function () {
+                menuList.style.transform = "translateX(-100%)";
+                menuClose.style.visibility = "hidden";
+                menuClose.style.opacity = "0";
+            };
+        </script>
         <main>
             <!-- Hero -->
             <div id="home" class="hero">
@@ -348,6 +412,10 @@
                             </div>
                         </div>
                     </div>
+
+                    <button class="btn feature-btn show-on-mobile">
+                        View All
+                    </button>
                 </div>
             </div>
 
